@@ -1,1 +1,307 @@
+TIPOS PRIMITIVOS:
+
+Como tipos primitivos entendemos aqueles tipos de informação mais usuais e básicos. São os habituais de outras linguagens de programação. Descreveremos algum dado para ter em conta em cada tipo.
+
+Boolean: Não é um valor numérico, só admite os valores true ou false.
+Char: Usa o código UNICODE e ocupa cada caractere 16 bits.
+Inteiros: Diferem nas precisões e podem ser positivos ou negativos.
+Byte: 1 byte.
+Short: 2 bytes.
+Int: 4 bytes.
+Long: 8 bytes.
+Reais em ponto flutuante: igual que os inteiros também diferem nas precisões e podem ser positivos ou negativos.
+Float: 4 bytes.
+Double: 8 bytes.
+
+OPERADORES:
+
+Os operadores de atribuição, aritméticos,relacionais e lógicos no Java são utilizados principalmente na etapa de processamento - para a construção da lógica - possibilitando realizar ações específicas sobre os dados. Adição, subtração, multiplicação, comparação são apenas alguns exemplos.
+
+Operadores de atribuição em Java:
+
+=
+
+O operador de atribuição é utilizado para definir o valor inicial ou sobrescrever o valor de uma variável. Em seu uso, o operando à esquerda representa a variável para a qual desejamos atribuir o valor informado à direita.
+
+Os operadores aritméticos realizam as operações fundamentais da matemática entre duas variáveis e retornam o resultado. Caso seja necessário escrever operações maiores ou mais complexas, podemos combinar esses operadores e criar expressões, o que nos permite executar todo tipo de cálculo de forma programática.
+Opções de operadores aritméticos:
+
++
+
+operador de adição
+
+-
+
+operador subtração
+
+*
+
+operador de multiplicação
+
+/
+
+operador de divisão
+
+%
+
+operador de módulo (ou resto da divisão)
+
+
+Operadores de incremento e decremento
+Os operadores de incremento e decremento também são bastante utilizados. Basicamente temos dois deles:++ e --, os quais podem ser declarados antes ou depois da variável e incrementam ou decrementam em 1 o valor da variável.
+
+Quando declaramos esse operador antes da variável, o incremento é realizado antes do valor da variável ser lido para o processamento ao qual a instrução pertence. Quando declarado depois, ocorre o contrário: lê-se o valor da variável para processamento e só então o valor da variável é incrementado. Com base nisso, suponha que temos o código abaixo:
+
+Opções de operadores de igualdade
+A tabela abaixo apresenta os operadores de igualdade do Java:
+
+==
+
+Utilizado quando desejamos verificar se uma variável é igual a outra.
+
+!=
+
+Utilizado quando desejamos verificar se uma variável é diferente de outra.
+
+Os operadores relacionais, assim como os de igualdade, avaliam dois operandos. Neste caso, mais precisamente, definem se o operando à esquerda é menor, menor ou igual, maior ou maior ou igual ao da direita, retornando um valor booleano.
+
+Opções de operadores relacionais
+A tabela abaixo apresenta os operadores relacionais do Java:
+
+>
+
+Utilizado quando desejamos verificar se uma variável é maior que outra.
+
+>=
+
+Utilizado quando desejamos verificar se uma variável é maior ou igual a outra
+
+<
+
+Utilizado quando desejamos verificar se uma variável é menor que outra.
+
+<=
+
+Utilizado quando desejamos verificar se uma variável é menor ou igual a outra.
+
+
+Operadores lógicos
+Os operadores lógicos representam o recurso que nos permite criar expressões lógicas maiores a partir da junção de duas ou mais expressões. Para isso, aplicamos as operações lógicas E (representado por “&&”) e OU (representado por “||”).
+
+
+&&
+
+Utilizado quando desejamos que as duas expressões sejam verdadeiras.
+
+||
+
+Utilizado quando precisamos que pelo menos um das expressões seja verdadeira.
+
+SCANNER:
+
+Para utilizar a classe Scanner em uma aplicação Java deve-se proceder da seguinte maneira:
+
+[ 1 ] importar o pacote java.util:
+
+import java.util.Scanner;
+
+[ 2 ] Instanciar e criar um objeto Scanner:
+
+Scanner ler = new Scanner(System.in);
+
+[ 3 ] Lendo valores através do teclado:
+
+[ 3.1 ] Lendo um valor inteiro:
+
+int n;
+
+System.out.printf("Informe um número para a tabuada: ");
+
+n = ler.nextInt();
+
+[ 3.2 ] Lendo um valor real:
+
+float preco;
+
+System.out.printf("Informe o preço da mercadoria = R$ ");
+
+preco = ler.nextFloat();
+
+[ 3.3 ] Lendo um valor real:
+
+double salario;
+
+System.out.printf("Informe o salário do Funcionário = R$ ");
+
+salario = ler.nextDouble();
+
+[ 3.4 ] Lendo uma String, usado na leitura de palavras simples que não usam o caractere de espaço (ou barra de espaço):
+
+String s;
+
+System.out.printf("Informe uma palavra simples:\n");
+
+s = ler.next();
+
+[ 3.5 ] Lendo uma String, usado na leitura de palavras compostas, por exemplo, Pato Branco:
+
+String s;
+
+System.out.printf("Informe uma cadeia de caracteres:\n");
+
+s = ler.nextLine();
+
+[ 3.6 ] Na leitura consecutiva de valores numéricos e String deve-se esvaziar o buffer do teclado antes da leitura do valor String, por exemplo:
+
+int n;
+
+String s;
+
+System.out.printf("Informe um Número Inteiro: ");
+
+n = ler.nextInt();
+
+ler.nextLine(); // esvazia o buffer do teclado
+
+System.out.printf("Informe uma cadeia de caracteres:\n");
+
+s = ler.nextLine();
+
+ESTRUTURAS CONDICIONAIS
+
+Estruturas condicionais e de repetição são fundamentais para a maioria das linguagens de programação. Sem elas, as instruções dos programas seriam executadas sequencialmente sem nenhum tipo de reaproveitamento ou ramificação. Não é difícil imaginar o quanto seria trabalhoso escrever programas assim.
+Felizmente, a linguagem Java está entre as linguagens que oferecem suporte a estruturas condicionais e de repetição, mas é importante lembrar que a estrutura sequencial também faz parte da linguagem Java. Isto significa que, se nenhuma estrutura de repetição ou condição for utilizada, as instruções em Java serão executadas uma após a outra, na ordem em que são escritas.
+if/else
+
+A estrutura condicional if/else permite ao programa avaliar uma expressão como sendo verdadeira ou falsa e, de acordo com o resultado dessa verificação, executar uma ou outra rotina.
+
+Na linguagem Java o tipo resultante dessa expressão deve ser sempre um boolean, pois diferentemente das demais, o Java não converte null ou inteiros como 0 e 1 para os valores true ou false.
+
+else if
+
+Complementar ao if/else temos o operador else if. Esse recurso possibilita adicionar uma nova condição à estrutura de decisão para atender a lógica sendo implementada.
+
+
+ESTRUTURAS DE REPETIÇÃO
+
+O que é estrutura de repetição?
+
+Dentro da lógica de programação é uma estrutura que permite executar mais de uma vez o mesmo comando ou conjunto de comandos, de acordo com uma condição ou com um contador.
+
+São utilizadas, por exemplo, para repetir ações semelhantes que são executadas para todos os elementos de uma lista de dados, ou simplesmente para repetir um mesmo processamento até que a condição seja satisfeita.
+
+Existem 4 estruturas de repetição básica para praticamente todas as linguagens de programação, seja C ou javascript.
+
+While (enquanto)
+
+
+While Loop
+
+É dentre as 3 a mais simples.
+Repete um bloco de código enquanto uma condição permanecer verdadeira
+Caso a condição seja falsa, os comandos dentro do while não serão executados e a execução continuará  com os comandos após o while
+A repetição do while é controlada por uma condição que verifica alguma variável. Porém para que o while funcione corretamente é importante que essa variável sofra alteração dentro do while. Ex: um contador.
+Após entrar dentro da repetição, o bloco de comandos sempre será executado, mesmo que dentro do bloco a variável que está controlando a execução seja alterada.
+Exemplo de código:
+numero = 42;
+divisor = 1;
+
+while (divisor <= numero) {
+    resto = numero % divisor;
+    if (resto == 0) {
+        printf("Divisor encontrado: %d \n", divisor);
+    }
+    divisor = divisor + 1;
+}
+Quando utilizar?
+
+Não há necessidade de inicializar ou atualizar variáveis contadoras.
+As etapas de inicialização ou atualização requerem muitas instruções e não caberiam elegantemente numa única linha do for.
+As informações necessárias para avaliar a condição não dependem de uma variável contadora ou são obtidas durante a execução do bloco.
+Do… While (faça enquanto)
+
+
+Do While Loop
+
+Muito parecido com o while, porém tem uma diferença crucial: condição é verificada após executar o bloco de comandos.
+Há uma bloco de comandos e logo depois uma verificação. Assim caso a variável condicional for alterada dentro do bloco de comandos, isso afetará a validação da condição.
+A escolha entre while e do while é mínima, então dependerá do bom senso do programador, que optará pela estrutura que deixar o algoritmo mais simples e legível.
+numeroA = 42;
+numeroB = 2;
+do {
+ resto = numeroB % numeroA;
+ numeroB = numeroA;
+ numeroA = resto;
+} while (numeroA > 0); 
+Quando utilizar?
+
+Quando é necessário executar um bloco pelo menos uma vez para obter as informações necessárias para avaliar a condição.
+For (para)
+
+
+For loop
+
+O For é utilizado para executar um conjunto de comandos executado por um número X de vezes.
+É passada uma situação inicial, uma condição e uma ação a ser executada a cada repetição.
+Uma variável é inicializada com uma valor inicial.
+Essa variável é utilizada para controlar a quantidade de vezes em que o conjunto de comandos será executado.
+E ao final do conjunto de comandos a variável sempre sofrerá uma alteração, aumentando ou diminuindo de acordo com a lógica utilizada.
+for($contador = 0; $contador < 10; $contador++){
+   echo $contador;
+}
+Quando utilizar?
+
+O número de repetições é controlado por uma variável controladora.
+Há necessidade de inicialização e atualização, mas que sejam simples o suficiente para que sejam acomodadas na linha do for. Para casos mais complexos, é melhor usar o comando while.
+A avaliação da condição não depende de dados obtidos na execução do bloco.
+
+Bônus: Foreach
+
+O FOREACH é uma simplificação do operador FOR.
+Permite acessar cada elemento individualmente iterando sobre toda a coleção sem a necessidade de informação de índices.
+$vetor = array(1 => 'a', 2 => 'b', 3 => 'c', 4 => 'd', 5 => 'e');
+foreach($vetor as $key => $item){
+   echo $key . ' = ' . $item;
+}
+Quando utilizar?
+
+Quando há uma coleção e você precisa acessar o valor ou dado que está no índice.
+
+CLASSES E OBJETOS
+
+Nos desenvolvimentos de sistemas, existem alguns fatores importantes como: o entendimento do código, fácil manutenção, reaproveitamento entre outros. Para isso, a Programação Orientada a Objetos também conhecida como POO, tem a intenção de ajudar nesses fatores, dando tempo e agilidade no desenvolvimento de um sistema para o programador.
+
+A Programação Orientada a Objetos foi criada por Alan Kay, autor da linguagem Smalltalk. Antes mesmo da criação Orientada a Objetos, já existiam algumas aplicações, neste caso da linguagem Simula 67, criada por Ole Johan Dahl e Kristen Nygaard em 1967.
+
+Classes
+As classes de programação são projetos de um objeto, aonde têm características e comportamentos, ou seja, permite armazenar propriedades e métodos dentro dela. Para construir uma classe é preciso utilizar o pilar da abstração. Uma classe geralmente representa um substantivo, por exemplo: uma pessoa, um lugar, algo que seja “abstrato”.
+
+Características das classes
+Toda classe possui um nome;
+Possuem visibilidade, exemplo: public, private, protected;
+Possuem membros como: Características e Ações;
+Para criar uma classe basta declarar a visibilidade + digitar a palavra reservada class + NomeDaClasse + abrir e fechar chaves { }.
+
+Objetos
+Os objetos são características definidas pelas classes. Neles é permitido instanciar objetos da classe para inicializar os atributos e invocar os métodos.
+
+Atributos
+Os atributos são as propriedades de um objeto, também são conhecidos como variáveis ou campos. Essas propriedades definem o estado de um objeto, fazendo com que esses valores possam sofrer alterações. A Listagem 3 mostra as características de um cachorro, mas os valores que são guardados nas variáveis são diferentes variando para cada cachorro.
+
+Métodos
+Os métodos são ações ou procedimentos, onde podem interagir e se comunicarem com outros objetos. A execução dessas ações se dá através de mensagens, tendo como função o envio de uma solicitação ao objeto para que seja efetuada a rotina desejada.
+
+Como boas práticas, é indicado sempre usar o nome dos métodos declarados como verbos, para que quando for efetuada alguma manutenção seja de fácil entendimento. Veja algumas nomenclaturas de nomes de métodos:
+
+acaoVoltar
+voltar
+avançar
+correr
+resgatarValor
+pesquisarNomes
+
+Construtores
+O construtor de um objeto é um método especial, pois inicializa seus atributos toda vez que é instanciado (inicializado).
+
+Toda vez que é digitada a palavra reservada new, o objeto solicita para a memória do sistema armazená-lo, onde chama o construtor da classe para inicializar o objeto. A identificação de um construtor em uma classe é sempre o mesmo nome da classe.
 
